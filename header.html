@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap" rel="stylesheet"/>
+    <title>Interactive Header</title>
+    <style>
+        :root {
+            --color-primary: #0096cc;
+            --color-primary-dark: #005472;
+            --color-white: #eee;
+            --color-black: #616060;
+            --color-grey: #bfbfbf;
+            --gradient-start: #0096cc;
+            --gradient-end: #005472;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 5%;
+            background-color: var(--color-primary-dark);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        header:hover {
+            background-color: var(--color-primary);
+        }
+
+        .logo {
+            font-size: 2rem;
+            color: var(--color-white);
+            cursor: pointer;
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            transition: text-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .logo:hover {
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            transform: scale(1.1);
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            list-style: none;
+        }
+
+        nav ul li a {
+            padding: 0 20px;
+            text-decoration: none;
+            font-size: 1rem;
+            text-transform: capitalize;
+            color: var(--color-white);
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--color-primary);
+            transform: scale(1.1);
+        }
+
+        .search-input {
+            width: 300px;
+            padding: 10px 20px;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            border-radius: 20px;
+            transition: width 0.3s ease;
+        }
+
+        .search-input:focus {
+            width: 350px;
+        }
+
+        .search-btn {
+            font-size: 1rem;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            margin-left: -35px;
+            color: var(--color-black);
+            cursor: pointer;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .search-btn:hover {
+            color: var(--color-primary);
+            transform: rotate(20deg);
+        }
+
+        /* Media Queries for Responsive Font Sizes */
+        @media (max-width: 1200px) {
+            .logo {
+                font-size: 1.8rem;
+            }
+
+            nav ul li a {
+                font-size: 0.9rem;
+            }
+
+            .search-input {
+                width: 250px;
+                font-size: 0.9rem;
+            }
+
+            .search-input:focus {
+                width: 300px;
+            }
+
+            .search-btn {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .logo {
+                margin-bottom: 10px;
+                font-size: 1.5rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul li {
+                margin-bottom: 10px;
+            }
+
+            nav ul li a {
+                font-size: 1rem;
+            }
+
+            .search-input {
+                width: 200px;
+                font-size: 1rem;
+            }
+
+            .search-input:focus {
+                width: 250px;
+            }
+
+            .search-btn {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">TechLearner</div>
+        <form action="#">
+            <input type="text" class="search-input" placeholder="Search">
+            <button class="search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+        <nav>
+            <ul>
+                <li><a href="#">home</a></li>
+                <li><a href="#">about</a></li>
+                <li><a href="#">contact</a></li>
+                <li><a href="#">services</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
